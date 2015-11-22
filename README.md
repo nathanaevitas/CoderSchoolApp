@@ -22,14 +22,14 @@ The following **optional** features are implemented:
 * [ ] User can add "tags" to a post, and filter posts by tag. 
 * [x] There is a "navbar" that is responsive to window size similar to http://v4-alpha.getbootstrap.com/examples/navbar/. **NOTE**: This is currently buggy in Bootstrap v4 Alpha. For a workaround, look at the CodePen associater dhere: https://github.com/twbs/bootstrap/issues/18263. 
 * [ ] User can see how many views a post has. 
-* [ ] User can leave a comment on a post.
+* [x] User can leave a comment on a post.
 
 The following **additional** features are implemented:
 
 - [x] adding header/footer to the layout
 - [x] adding authentication system for user to sign-up/sign-in/sign-out/update account info
 - [x] adding gravatar to user
--
+- [x] adding a dropdown menu for user account function
 
 
 ## Video Walkthrough 
