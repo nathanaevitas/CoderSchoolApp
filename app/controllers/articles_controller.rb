@@ -11,6 +11,8 @@
   # GET /articles/1
   # GET /articles/1.json
   def show
+    @articles = Article.all
+    @markdown = Redcarpet::Markdown.new(Redcarpet::Render::HTML)
   end
 
   # GET /articles/new
