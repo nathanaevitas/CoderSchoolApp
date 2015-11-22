@@ -27,6 +27,8 @@ gem 'rails_12factor', group: :production
 
 gem 'materialize-sass'
 
+gem 'devise', '~> 3.4.1'
+
 gem 'redcarpet'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

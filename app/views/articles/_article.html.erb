@@ -6,10 +6,12 @@
       <span class="card-title"><%= article.title %></span>
       <p><%= @markdown.render(article.body).html_safe %></p>
     </div>
+    <% if (user_signed_in?) %>
      <div class="card-action">
       <%= link_to "Edit", edit_article_path(article) %>
-      <a href="#">This is a link</a>
-    </div>            
+      <%= link_to "Delete", article, method: :delete, data: { confirm: 'Are you sure?' } %>      
+    </div> 
+    <% end %>           
   </div>
 </div>
 </div>

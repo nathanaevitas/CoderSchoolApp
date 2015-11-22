@@ -1,0 +1,45 @@
+<header>
+		<!-- these two are drop-down menu content -->
+		<ul id="dropdownweb" class="dropdown-content">
+		  <li><%= link_to "My Profile", edit_user_registration_path %></li>		 
+		  <li><%= link_to "Log Out", destroy_user_session_path, method: :delete %></li>
+		</ul>
+
+		<ul id="dropdownmob" class="dropdown-content">
+		  <li><%= link_to "My Profile", edit_user_registration_path %></li>			 
+		  <li><%= link_to "Log Out", destroy_user_session_path, method: :delete %></li>
+		</ul>
+		<!-- @lNotes: this is to change the color of the nav bar; z-depth-2 is for putting the shadow to the navbar -->
+		<nav class="purple darken-1 z-depth-2">
+			<div class='container'>
+			<div class="nav-wrapper">
+			  <a href="/" class="brand-logo">Nguyen's Blog</a>
+			  <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+			  <ul class="right hide-on-med-and-down">			   
+			    <% if(!user_signed_in?) %>
+				    <li><%= link_to "Sign Up", new_user_registration_path %> </li>
+				    <li><%= link_to "Log in", new_user_session_path %> </li>
+			   	<% else %>
+			   		<li> <%= link_to 'New Article', new_article_path %></li>
+				    <li><a class="dropdown-button valign-wrapper" href="#!" data-activates="dropdownweb">
+				    	<%= image_tag avatar_url(current_user), class: "circle responsive_img" %>&nbsp;
+				    	<%= current_user.name %><i class="material-icons right">arrow_drop_down</i>		
+				    </a></li>
+				<% end %>			    
+			  </ul>
+
+			  <ul class="side-nav" id="mobile-demo">			    
+			    <% if(!user_signed_in?) %>
+				    <li><%= link_to "Sign Up",new_user_registration_path %></li>
+				    <li><%= link_to "Log in", new_user_session_path %></li>
+				<% else %>
+			    	<li><a class="dropdown-button valign-wrapper" href="#!" data-activates="dropdownmob">
+				    	<%= image_tag avatar_url(current_user), class: "circle responsive_img" %>&nbsp;
+				    	<%= current_user.name %><i class="material-icons right">arrow_drop_down</i>		
+				    </a></li>
+			    <% end %>
+			  </ul>
+			</div>
+			</div>
+		</nav>
+	</header>
